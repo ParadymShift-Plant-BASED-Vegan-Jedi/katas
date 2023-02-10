@@ -1,0 +1,47 @@
+def decrypt(encrypted_text, n):
+    print(encrypted_text)
+    print(n)
+    if len(encrypted_text) < 1 or n < 1:
+        return encrypted_text
+    newtext = encrypted_text
+    while n > 0:
+        oddlist = list()
+        evenlist = list()
+        for i in range(len(encrypted_text)):
+            if not i % 2:
+                evenlist.append(newtext[i])
+            else:
+                oddlist.append(newtext[i])
+            print(evenlist)
+            print(oddlist)
+            newlist = evenlist + oddlist
+            print(newlist)
+            newtext = "".join(newlist)
+            decrypted_string = "".join(newlist)
+            n -= 1
+            print(decrypted_string)
+        return decrypted_string
+
+def encrypt(text, n):
+    print(text)
+    print(n)
+    if len(text) < 1 or n < 1:
+        return text
+    newtext = text
+    while n > 0:
+        oddlist = list()
+        evenlist = list()
+        for i in range(len(text)):
+            if not i % 2:
+                evenlist.append(newtext[i])
+            else:
+                oddlist.append(newtext[i])
+        print(oddlist)
+        print(evenlist)
+        newlist = oddlist + evenlist
+        print(newlist)
+        newtext = "".join(newlist)
+        encrypted_string = "".join(newlist)
+        n -= 1
+        print(encrypted_string)
+    return encrypted_string
